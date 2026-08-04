@@ -1,0 +1,9 @@
+{
+  "benchmark": "dojo",
+  "scope": "fixed prepared test set only",
+  "seed": 42,
+  "reference_model": {"id": "qwen7b", "endpoint_name": "qwen2.5-7b"},
+  "checkpoint": "checkpoints/dojo/checker_tinybert_17b.pth",
+  "frozen_attack_result": "results/dojo/frozen_attack.json",
+  "frozen_benign_result": "results/dojo/frozen_benign.json"
+}

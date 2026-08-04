@@ -1,0 +1,10 @@
+{
+  "benchmark": "injectagent",
+  "scope": "full configured test set using the fixed zero-shot intent split",
+  "seed": 42,
+  "reference_model": {"id": "qwen7b", "endpoint_name": "qwen2.5-7b"},
+  "checkpoint": "checkpoints/injectagent/checker_tinybert_injecagent.pth",
+  "frozen_attack_result": "results/injectagent/frozen_attack.json",
+  "frozen_enhanced_result": "results/injectagent/frozen_enhanced.json",
+  "frozen_benign_result": "results/injectagent/frozen_benign.json"
+}

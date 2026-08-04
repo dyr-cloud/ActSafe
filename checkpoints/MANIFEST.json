@@ -1,0 +1,26 @@
+{
+  "reference_model": "qwen7b",
+  "checkpoints": [
+    {
+      "benchmark": "asb",
+      "path": "checkpoints/asb/checker_tinybert_17b.pth",
+      "filename": "checker_tinybert_17b.pth",
+      "size_bytes": 17562251,
+      "sha256": "d35a3a33252360c3c16bf07974b140b4a458e463eb4504a1888926a60e086a46"
+    },
+    {
+      "benchmark": "dojo",
+      "path": "checkpoints/dojo/checker_tinybert_17b.pth",
+      "filename": "checker_tinybert_17b.pth",
+      "size_bytes": 17561828,
+      "sha256": "c44866d8790ee267509c99de9cee2fd783fe07d8499fed91d4ac8c3b751c76d0"
+    },
+    {
+      "benchmark": "injectagent",
+      "path": "checkpoints/injectagent/checker_tinybert_injecagent.pth",
+      "filename": "checker_tinybert_injecagent.pth",
+      "size_bytes": 17562207,
+      "sha256": "04f8490f2f377897bbf57060f5d713f5df955a8894eec99f5c62afe1922a45f0"
+    }
+  ]
+}

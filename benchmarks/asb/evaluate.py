@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+"""Validate and print the stored ASB metrics without model calls."""
+
+from __future__ import annotations
+
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+raise SystemExit(subprocess.run([sys.executable, str(ROOT / "scripts/summarize_results.py"), "--benchmark", "asb"], cwd=ROOT).returncode)

@@ -1,0 +1,47 @@
+{
+  "resource_limits": {
+    "user_space_size": "16GB",
+    "kernel_space_heap_size": "512MB",
+    "max_num_of_threads": 64
+  },
+  "process": {
+    "default_stack_size": "8MB",
+    "default_heap_size": "8GB",
+    "default_mmap_size": "8GB"
+  },
+  "entry_points": [
+    "/usr/bin/python3"
+  ],
+  "env": {
+    "default": [
+      "LLM_TEE_INSIDE_OCCLUM=1",
+      "TEE_RUNTIME_ROOT=/opt/llm_tee_auditor",
+      "PYTHONPATH=/opt/llm_tee_auditor/python:/opt/llm_tee_auditor/src"
+    ],
+    "untrusted": [
+      "OPENAI_API_KEY",
+      "OPENAI_BASE_URL",
+      "ASB_MODEL_NAME",
+      "MODEL_NAME",
+      "SAFE_PROB_THRESHOLD"
+    ]
+  },
+  "metadata": {
+    "product_id": 1,
+    "version_number": 1,
+    "debuggable": false
+  },
+  "mount": [
+    {
+      "target": "/",
+      "type": "unionfs",
+      "options": {
+        "layers": [
+          {"target": "/", "type": "sefs", "source": "./build/mount/__ROOT", "options": {"MAC": ""}},
+          {"target": "/", "type": "sefs", "source": "./run/mount/__ROOT"}
+        ]
+      }
+    },
+    {"target": "/host", "type": "hostfs", "source": "."}
+  ]
+}

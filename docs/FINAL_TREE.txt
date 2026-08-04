@@ -1,0 +1,107 @@
+usenix_security_2027_artifact/
+|-- .env.example
+|-- .gitignore
+|-- LICENSE
+|-- README.md
+|-- pyproject.toml
+|-- requirements-tee.txt
+|-- requirements-training.txt
+|-- requirements.txt
+|-- benchmarks/
+|   |-- README.md
+|   |-- _runner.py
+|   |-- asb/
+|   |   |-- asb_official_test_split.json
+|   |   |-- evaluate.py
+|   |   |-- run_test.py
+|   |   |-- test_privacy.py
+|   |   |-- test_utility.py
+|   |   `-- training/
+|   |       |-- asb_auditor_test.json
+|   |       |-- asb_train.json
+|   |       |-- test_auditor.py
+|   |       `-- train_auditor.py
+|   |-- dojo/
+|   |   |-- evaluate.py
+|   |   |-- run_test.py
+|   |   |-- test_checker_utility7.py
+|   |   `-- test_privacy_order7.py
+|   `-- injectagent/
+|       |-- evaluate.py
+|       |-- run_test.py
+|       |-- test_checker_privacy_base.py
+|       |-- test_checker_privacy_en.py
+|       `-- test_checker_utility.py
+|-- checkpoints/
+|   |-- MANIFEST.json
+|   |-- asb/checker_tinybert_17b.pth
+|   |-- dojo/checker_tinybert_17b.pth
+|   `-- injectagent/checker_tinybert_injecagent.pth
+|-- configs/
+|   |-- asb/evaluation.json
+|   |-- dojo/evaluation.json
+|   |-- injectagent/evaluation.json
+|   `-- occlum/
+|       |-- Occlum.json
+|       `-- empty.json
+|-- docs/
+|   |-- ARTIFACT.md
+|   |-- DATASETS.md
+|   |-- FINAL_TREE.txt
+|   |-- METRICS.md
+|   |-- MOVED_FILES.txt
+|   |-- NON_ENGLISH_DATA.md
+|   |-- REPRODUCIBILITY.md
+|   |-- SECURITY.md
+|   `-- TEE_REORGANIZATION_REPORT.md
+|-- examples/README.md
+|-- results/
+|   |-- asb/
+|   |   |-- frozen_attack.json
+|   |   |-- frozen_auditor_test.json
+|   |   `-- frozen_benign.json
+|   |-- dojo/
+|   |   |-- frozen_attack.json
+|   |   `-- frozen_benign.json
+|   `-- injectagent/
+|       |-- frozen_attack.json
+|       |-- frozen_benign.json
+|       `-- frozen_enhanced.json
+|-- scripts/
+|   |-- build_occlum_image.sh
+|   |-- evaluate_asb.sh
+|   |-- evaluate_dojo.sh
+|   |-- evaluate_injectagent.sh
+|   |-- occlum_entrypoint.py
+|   |-- prepare_occlum_image.sh
+|   |-- release_audit.py
+|   |-- reproduce_results.sh
+|   |-- run_asb.sh
+|   |-- run_dojo_test.sh
+|   |-- run_injectagent_test.sh
+|   |-- run_protected_auditor.sh
+|   |-- setup.sh
+|   |-- summarize_results.py
+|   |-- verify_checkpoints.py
+|   |-- verify_tee_boundary.py
+|   `-- verify_tee_execution.sh
+|-- src/llm_tee_agent_artifact/
+|   |-- __init__.py
+|   |-- results.py
+|   `-- tee/
+|       |-- __init__.py
+|       |-- client.py
+|       |-- entrypoint.py
+|       |-- paths.py
+|       |-- protocol.py
+|       |-- service.py
+|       `-- policies/
+|           |-- asb/
+|           |   |-- checker_tinybert_17b.meta.json
+|           |   `-- policy.py
+|           |-- dojo/policy.py
+|           `-- injectagent/policy.py
+`-- tests/
+    |-- test_release_scope.py
+    |-- test_results.py
+    `-- test_tee_boundary.py

@@ -1,0 +1,7 @@
+# Dependencies imported by the protected policy modules.
+httpx
+openai
+spacy
+torch
+tqdm
+transformers
