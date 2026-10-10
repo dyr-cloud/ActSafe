@@ -30,7 +30,7 @@ outputs/
 benchmarks/asb/training/generated/
 results_asb_summary.json
 wandb/
-results/**/generated_*.json
+/results/
 
 # The three released reference checkpoints are intentionally versioned.
 !checkpoints/

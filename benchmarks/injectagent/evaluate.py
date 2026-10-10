@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and print stored InjectAgent metrics without model calls."""
+"""Validate and print locally generated InjectAgent metrics without model calls."""
 
 from __future__ import annotations
 

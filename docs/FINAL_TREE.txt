@@ -55,18 +55,6 @@ usenix_security_2027_artifact/
 |   |-- SECURITY.md
 |   `-- TEE_REORGANIZATION_REPORT.md
 |-- examples/README.md
-|-- results/
-|   |-- asb/
-|   |   |-- frozen_attack.json
-|   |   |-- frozen_auditor_test.json
-|   |   `-- frozen_benign.json
-|   |-- dojo/
-|   |   |-- frozen_attack.json
-|   |   `-- frozen_benign.json
-|   `-- injectagent/
-|       |-- frozen_attack.json
-|       |-- frozen_benign.json
-|       `-- frozen_enhanced.json
 |-- scripts/
 |   |-- build_occlum_image.sh
 |   |-- evaluate_asb.sh

@@ -66,18 +66,14 @@ class ReleaseScopeTests(unittest.TestCase):
             self.assertNotIn("models", config)
 
     def test_no_model_specific_subdirectories(self) -> None:
-        for relative in ("benchmarks/asb", "benchmarks/dojo", "benchmarks/injectagent", "results/asb", "results/dojo", "results/injectagent"):
+        for relative in ("benchmarks/asb", "benchmarks/dojo", "benchmarks/injectagent"):
             subdirectories = [path.name for path in (ROOT / relative).iterdir() if path.is_dir() and path.name != "training"]
             self.assertEqual(subdirectories, [])
 
-    def test_only_reference_results_are_released(self) -> None:
-        expected = {
-            "asb": {"frozen_attack.json", "frozen_auditor_test.json", "frozen_benign.json"},
-            "dojo": {"frozen_attack.json", "frozen_benign.json"},
-            "injectagent": {"frozen_attack.json", "frozen_benign.json", "frozen_enhanced.json"},
-        }
-        for benchmark, names in expected.items():
-            self.assertEqual({path.name for path in (ROOT / f"results/{benchmark}").glob("*.json")}, names)
+    def test_precomputed_results_are_not_released(self) -> None:
+        self.assertEqual(list(ROOT.rglob("frozen_*.json")), [])
+        gitignore = (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines()
+        self.assertIn("/results/", gitignore)
 
 
 if __name__ == "__main__":

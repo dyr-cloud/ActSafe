@@ -1,8 +1,8 @@
 # ActSafe
 
-This artifact provides a complete reference LLM configuration. It includes the complete ASB auditor training and evaluation workflow and the AgentDojo and InjecAgent test time evaluation workflows for that configuration. Experiments conducted with other LLMs are reported in the paper but are outside the scope of this artifact.
+This repository provides the code and configuration for one reference LLM setup. It includes the complete ASB auditor training and evaluation workflow and the AgentDojo and InjecAgent test-time evaluation workflows for that configuration. Experiments conducted with other LLMs are outside the scope of this repository.
 
-No checkpoints, configurations, execution pipelines, or result files for the other evaluated LLMs are included.
+Precomputed experiment results and reported metrics are not included. Results produced by local runs are written under `results/`, which is ignored by Git.
 
 The selected reference is `qwen7b`, using the endpoint model name `qwen2.5-7b`. The `--model` argument is retained for command compatibility but rejects every value except `qwen7b`.
 
@@ -77,7 +77,7 @@ python benchmarks/injectagent/run_test.py --model qwen7b --phase benign
 python benchmarks/injectagent/evaluate.py
 ```
 
-Frozen reference results are named `results/<benchmark>/frozen_*.json`. Fresh runs write ignored `generated_*.json` files beside them and never overwrite the frozen files.
+Each run writes a `generated_*.json` file under `results/<benchmark>/`. These locally generated outputs are ignored by Git and should not be committed.
 
 ## Verify
 
@@ -86,7 +86,6 @@ python -m unittest discover -s tests -v
 python scripts/verify_tee_boundary.py
 python scripts/verify_checkpoints.py
 python scripts/release_audit.py --root .
-bash scripts/reproduce_results.sh
 ```
 
 The complete auditor remains inside Occlum. Agent reasoning, external benchmark data, orchestration, result collection, and approved simulated tool execution remain outside. There is no unprotected fallback.

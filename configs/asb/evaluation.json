@@ -3,7 +3,5 @@
   "test_file": "benchmarks/asb/asb_official_test_split.json",
   "seed": 42,
   "reference_model": {"id": "qwen7b", "endpoint_name": "qwen2.5-7b"},
-  "checkpoint": "checkpoints/asb/checker_tinybert_17b.pth",
-  "frozen_attack_result": "results/asb/frozen_attack.json",
-  "frozen_benign_result": "results/asb/frozen_benign.json"
+  "checkpoint": "checkpoints/asb/checker_tinybert_17b.pth"
 }

@@ -1,5 +1,1 @@
-No files were moved from the original project. Release files were copied or created inside the artifact directory.
-
-One artifact-owned file was relocated within the artifact during narrowing:
-
-- benchmarks/asb/training/ASB_Auditor_Test_Result.json -> results/asb/frozen_auditor_test.json
+No files were moved from the original project. Release files were copied or created inside the artifact directory. Precomputed result files are intentionally excluded from this code release.
