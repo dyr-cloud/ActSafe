@@ -87,4 +87,4 @@ python scripts/verify_checkpoints.py
 python scripts/release_audit.py --root .
 ```
 
-The complete auditor remains inside Occlum. Agent reasoning, external benchmark data, orchestration, result collection, and approved simulated tool execution remain outside. There is no unprotected fallback.
+The complete auditor remains inside Occlum. Agent reasoning, external benchmark data, orchestration, result collection, and approved tool execution remain outside. There is no unprotected fallback.
