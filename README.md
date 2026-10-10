@@ -1,6 +1,6 @@
 # ActSafe
 
-This repository provides the code and configuration for one reference LLM setup. It includes the complete ASB auditor training and evaluation workflow and the AgentDojo and InjecAgent test-time evaluation workflows for that configuration. Experiments conducted with other LLMs are outside the scope of this repository.
+This repository provides the code and configuration for one reference LLM setup. It includes the complete ASB auditor training and evaluation workflow and the AgentDojo and InjecAgent test-time evaluation workflows for that configuration. 
 
 Precomputed experiment results and reported metrics are not included. Results produced by local runs are written under `results/`, which is ignored by Git.
 
@@ -13,7 +13,7 @@ bash scripts/setup.sh
 source .venv/bin/activate
 ```
 
-## ASB auditor training
+## Auditor training
 
 The released training and auditor test data, random seed 42, optimizer settings, threshold selection procedure, and early stopping settings are provided under `benchmarks/asb/training`. Training writes only to its ignored `generated/` directory.
 
@@ -35,7 +35,7 @@ The reference checkpoints required by the ASB, AgentDojo, and InjecAgent evaluat
 
 A newly trained checkpoint may not be bit for bit identical to the included reference checkpoint because of differences in hardware, dependency versions, and nondeterministic numerical operations.
 
-The auditor test uses the newly generated ASB checkpoint by default. To test the included reference checkpoint instead, set:
+The auditor test uses the newly generated checkpoint by default. To test the included reference checkpoint instead, set:
 
 ```bash
 export ASB_AUDITOR_WEIGHTS="$PWD/checkpoints/asb/checker_tinybert_17b.pth"
@@ -58,7 +58,7 @@ bash scripts/build_occlum_image.sh
 bash scripts/verify_tee_execution.sh
 ```
 
-Only the three reference policies, ASB threshold metadata, three included reference checkpoints, protected package, and required runtime assets are copied into `/host/image`.
+Only the three reference policies, threshold metadata, three included reference checkpoints, protected package, and required runtime assets are copied into `/host/image`.
 
 ## Test and evaluate
 
@@ -77,8 +77,7 @@ python benchmarks/injectagent/run_test.py --model qwen7b --phase benign
 python benchmarks/injectagent/evaluate.py
 ```
 
-Each run writes a `generated_*.json` file under `results/<benchmark>/`. These locally generated outputs are ignored by Git and should not be committed.
-
+Each run writes a `generated_*.json` file under `results/<benchmark>/`. 
 ## Verify
 
 ```bash
